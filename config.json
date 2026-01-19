@@ -1,0 +1,32 @@
+{
+    "paths": {
+        "video_folder": "videos",
+        "results_folder": "results",
+        "intermediate_file": "transcriptions_fast.json",
+        "final_output_file": "gym_exercises_final.json",
+        "log_file": "process_fast.log"
+    },
+    "models": {
+        "ollama_model": "gemma2:latest",
+        "openai_model": "gpt-4.1-mini",
+        "whisper_model_size": "distil-large-v3"
+    },
+    "whisper": {
+        "beam_size": 1,
+        "language": "en",
+        "supported_video_formats": [
+            ".mp4",
+            ".mov",
+            ".avi",
+            ".mkv"
+        ],
+        "transcription_backend": "openai"
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "%(asctime)s - %(levelname)s - %(message)s"
+    },
+    "prompts": {
+        "exercise_analysis": "You are an expert fitness coach and movement analyst. Analyze the following gym video transcription and infer the most likely exercise being performed based on spoken cues, movement descriptions, equipment mentioned, body position, and repetitions.\n\nIf the exercise name is explicitly stated, return it.\nIf it is not explicitly stated, intelligently infer the single most likely exercise.\nIf multiple exercises are equally likely or there is insufficient information, return \"Unknown\".\n\nReturn ONLY the standard exercise name (e.g., \"Barbell Back Squat\", \"Dumbbell Bench Press\"). Do not include explanations or extra text.\n\nTranscription: \"{text}\""
+    }
+}

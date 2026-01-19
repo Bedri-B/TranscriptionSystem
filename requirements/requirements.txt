@@ -3,3 +3,4 @@ openai-whisper
 ollama
 faster-whisper
 openai
+python-dotenv
