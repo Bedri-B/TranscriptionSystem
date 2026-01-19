@@ -1,0 +1,5 @@
+moviepy
+openai-whisper
+ollama
+faster-whisper
+openai
